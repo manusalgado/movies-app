@@ -1,0 +1,19 @@
+<form [formGroup]="form" (ngSubmit)="handleRegister()">
+  <ion-item>
+    <ion-label>Nombre completo</ion-label>
+    <ion-input type="text" formControlName="fullName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Número de contacto</ion-label>
+    <ion-input type="number" formControlName="phone"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Registro de Foto</ion-label>
+    <ion-input type="text" formControlName="photo"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Password</ion-label>
+    <ion-input type="text" formControlName="password"></ion-input>
+  </ion-item>
+  <button ion-button type="submit" [disabled]="!form.valid">Registrar</button>
+</form>
