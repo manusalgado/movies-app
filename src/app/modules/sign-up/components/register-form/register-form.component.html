@@ -1,19 +1,21 @@
-<form [formGroup]="form" (ngSubmit)="handleRegister()">
-  <ion-item>
-    <ion-label>Nombre completo</ion-label>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <ion-item (click)="addPhoto()">
+    <ion-label>Foto: </ion-label>
+    <ion-avatar>
+      <ion-img [src]="photoValidator"></ion-img>
+    </ion-avatar>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating">Nombre completo: </ion-label>
     <ion-input type="text" formControlName="fullName"></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-label>Número de contacto</ion-label>
+  <ion-item lines="full">
+    <ion-label position="floating">Número de contacto: </ion-label>
     <ion-input type="number" formControlName="phone"></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-label>Registro de Foto</ion-label>
-    <ion-input type="text" formControlName="photo"></ion-input>
+  <ion-item lines="full">
+    <ion-label position="floating">Password: </ion-label>
+    <ion-input type="password" formControlName="password"></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-label>Password</ion-label>
-    <ion-input type="text" formControlName="password"></ion-input>
-  </ion-item>
-  <button ion-button type="submit" [disabled]="!form.valid">Registrar</button>
+  <ion-button expand="block" color="primary" type="submit" [disabled]="!form.valid">Registrar</ion-button>
 </form>
