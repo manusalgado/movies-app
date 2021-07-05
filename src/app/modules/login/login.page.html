@@ -1,9 +1,13 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Inicio de sesión</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-nav-link [routerLink]="['/sign-up']">Registrate</ion-nav-link>
+  <app-login-form></app-login-form>
+  <ion-button [routerLink]="['/sign-up']" expand="block" color="danger">Registrate</ion-button>
 </ion-content>
