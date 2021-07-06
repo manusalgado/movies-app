@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MoviesFacade } from './movies.facade';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardPage implements OnInit {
 
-  constructor() { }
+  constructor(private facade: MoviesFacade) { }
 
   ngOnInit() {
+    this.fetchMovies();
+  }
+
+  public fetchMovies(): void {
+    this.facade.getMovies();
   }
 
 }
