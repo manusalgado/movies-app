@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ContentDetailPageRoutingModule } from './content-detail-routing.module';
 
 import { ContentDetailPage } from './content-detail.page';
+import { MoviesFacade } from '../movies.facade';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { ContentDetailPage } from './content-detail.page';
     IonicModule,
     ContentDetailPageRoutingModule
   ],
-  declarations: [ContentDetailPage]
+  declarations: [ContentDetailPage],
+  providers: [MoviesFacade]
 })
 export class ContentDetailPageModule {}

@@ -14,4 +14,8 @@ export class MoviesService {
   public movies(): Observable<MoviePayload[]> {
     return of(MOVIES_DATA);
   }
+
+  public movie(): Observable<MoviePayload[]> {
+    return of(MOVIES_DATA)
+  }
 }
