@@ -9,10 +9,6 @@ const routes: Routes = [
     component: DashboardPage
   },
   {
-    path: 'content-list',
-    loadChildren: () => import('./content-list/content-list.module').then( m => m.ContentListPageModule)
-  },
-  {
     path: 'content-detail',
     loadChildren: () => import('./content-detail/content-detail.module').then( m => m.ContentDetailPageModule)
   }
