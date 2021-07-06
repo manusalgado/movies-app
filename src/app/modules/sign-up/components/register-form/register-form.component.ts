@@ -35,7 +35,11 @@ export class RegisterFormComponent implements OnInit {
 
   get photoValidator(): string {
     return this.photo ? this.photo?.webviewPath : this.defaultImage;
-  } 
+  }
+
+  public clear(): void {
+    this.form.reset();
+  }
 
   public addPhoto(): void {
     this.photoService.addPhoto();
@@ -63,6 +67,7 @@ export class RegisterFormComponent implements OnInit {
         password
       };
       this.handleRegister(payload);
+      this.clear();
     }
   }
 

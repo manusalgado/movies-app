@@ -96,7 +96,7 @@ export const MOVIES_DATA = [
     genderName: 'drama',
     genderId: 13,
     year: 2021,
-    thumbnail: 'https://pics.filmaffinity.com/Sicario-449486068-large.jpg'
+    thumbnail: 'https://i.blogs.es/9cd173/cartel-de-sicario/1366_2000.jpg'
   },
   {
     name: 'Los hijos de la calle',
@@ -114,7 +114,7 @@ export const MOVIES_DATA = [
     genderName: 'drama',
     genderId: 13,
     year: 2021,
-    thumbnail: 'https://pics.filmaffinity.com/La_llegada-150207636-large.jpg'
+    thumbnail: 'https://i.blogs.es/012208/ink7ab56qb2rratqadbgpciw80t-1-/450_1000.jpg'
   },
   {
     name: 'La mujer de la ventana',
@@ -123,7 +123,7 @@ export const MOVIES_DATA = [
     genderName: 'drama',
     genderId: 13,
     year: 2021,
-    thumbnail: 'https://pics.filmaffinity.com/La_mujer_en_la_ventana-585352381-large.jpg'
+    thumbnail: 'https://i.ytimg.com/vi/TIloiAikqxc/mqdefault.jpg'
   },
   {
     name: 'Ex maquina',
@@ -159,7 +159,7 @@ export const MOVIES_DATA = [
     genderName: 'drama',
     genderId: 13,
     year: 2021,
-    thumbnail: 'https://pics.filmaffinity.com/El_practicante-390335618-large.jpg'
+    thumbnail: 'https://img.ecartelera.com/noticias/fotos/62200/62221/1.jpg'
   },
   {
     name: 'El gran impostor',
