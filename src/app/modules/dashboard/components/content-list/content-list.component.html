@@ -3,7 +3,7 @@
     <ion-thumbnail slot="start">
       <ion-img [src]="movie.thumbnail"></ion-img>
     </ion-thumbnail>
-    <ion-button fill="outline" slot="end">Ver detalle</ion-button>
+    <ion-button fill="outline" slot="end" [routerLink]="[movie.id]">Ver detalle</ion-button>
   </ion-item>
 
   <ion-card-content>

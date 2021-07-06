@@ -17,7 +17,16 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    loadChildren: () => import('./modules/dashboard/dashboard.module').then( m => m.DashboardPageModule)
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./modules/dashboard/dashboard.module').then( m => m.DashboardPageModule)
+      },
+      {
+        path: ':movieId',
+        loadChildren: () => import('./modules/dashboard/content-detail/content-detail.module').then( m => m.ContentDetailPageModule )
+      }
+    ],
   },
   {
     path: 'home',

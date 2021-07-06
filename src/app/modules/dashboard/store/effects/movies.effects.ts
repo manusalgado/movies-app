@@ -14,16 +14,29 @@ export class MoviesEffects {
     private service: MoviesService
   ) { }
 
-    movies$: Observable<Action> = createEffect(() => this.actions$
+  movies$: Observable<Action> = createEffect(() => this.actions$
+    .pipe(
+      ofType(MovieActions.getMoviesAction),
+      exhaustMap(() => this.service.movies()
       .pipe(
-        ofType(MovieActions.getMoviesAction),
-        exhaustMap(() => this.service.movies()
-        .pipe(
-          map((movies) => {
-            return MovieActions.getMoviesSuccessAction({movies});
-          }),
-          catchError((err) => of(MovieActions.getMoviesFailureAction({error: 'Error'})))
-        ))
-      ));
+        map((movies) => {
+          return MovieActions.getMoviesSuccessAction({movies});
+        }),
+        catchError((err) => of(MovieActions.getMoviesFailureAction({error: 'Error'})))
+      ))
+    ));
+
+  movie$: Observable<Action> = createEffect(() => this.actions$
+  .pipe(
+    ofType(MovieActions.getMovieAction),
+    exhaustMap(({movieId}) => this.service.movie()
+    .pipe(
+      map((movies) => {
+        const movie = movies.filter(data => data.id === movieId)[0];
+        return MovieActions.getMovieSuccessAction({movie});
+      }),
+      catchError((err) => of(MovieActions.getMovieFailureAction({error: 'Error'})))
+    ))
+  ));
 
 }

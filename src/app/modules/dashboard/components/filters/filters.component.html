@@ -2,9 +2,18 @@
 <ion-grid>
   <ion-row>
     <ion-col *ngFor="let item of filterItems">
-      <ion-button size="small">
-        {{item.value}}
-      </ion-button>
+      <ion-item>
+        <ion-button size="small">
+          {{item.value}}
+        </ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-label>Género</ion-label>
+        <ion-select placeholder="Select One">
+          <ion-select-option value="f">Female</ion-select-option>
+          <ion-select-option value="m">Male</ion-select-option>
+        </ion-select>
+      </ion-item>
     </ion-col>
   </ion-row>
 </ion-grid>

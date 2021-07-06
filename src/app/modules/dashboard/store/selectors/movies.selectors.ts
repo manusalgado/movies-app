@@ -11,3 +11,8 @@ export const getMovies = createSelector(
 );
 
 export const selectAllMovies = createSelector(getMovies, fromReducer.selectAll);
+
+export const selectMovie = createSelector(
+  moviesSelector,
+  (state: DashboardState) => state.movie
+);

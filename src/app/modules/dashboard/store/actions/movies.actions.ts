@@ -12,8 +12,23 @@ export const getMoviesFailureAction = createAction(
   '[Movies] get movies failure',
   props<{error: string}>());
 
+export const getMovieAction = createAction(
+  '[Movies] get movie',
+  props<{movieId: number}>());
+
+export const getMovieSuccessAction = createAction(
+  '[Movies] get movie success',
+  props<{movie: MoviePayload}>());
+
+export const getMovieFailureAction = createAction(
+  '[Movies] get movie failure',
+  props<{error: string}>());
+
 export const MovieActions = {
   getMoviesAction,
   getMoviesSuccessAction,
-  getMoviesFailureAction
+  getMoviesFailureAction,
+  getMovieAction,
+  getMovieSuccessAction,
+  getMovieFailureAction
 };
