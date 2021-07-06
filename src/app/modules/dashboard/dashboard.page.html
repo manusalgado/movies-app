@@ -6,12 +6,12 @@
     <ion-title>Dashboard</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<ion-router-outlet id="main"></ion-router-outlet>
 <ion-content>
   <app-filters></app-filters>
-  <app-content-list></app-content-list>
+  <app-content-list [movies]="movies$ | async"></app-content-list>
 </ion-content>
 
 <app-menu></app-menu>
-<ion-router-outlet id="main"></ion-router-outlet>
+
 

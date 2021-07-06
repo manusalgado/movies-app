@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MoviePayload } from '../../entities/dashboard';
 
 @Component({
   selector: 'app-content-list',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./content-list.component.scss'],
 })
 export class ContentListComponent implements OnInit {
+
+  @Input() movies: MoviePayload[];
 
   constructor() { }
 
