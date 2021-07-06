@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { MoviePayload } from './entities/dashboard';
 
 import { MoviesFacade } from './movies.facade';
 
@@ -13,6 +15,10 @@ export class DashboardPage implements OnInit {
 
   ngOnInit() {
     this.fetchMovies();
+  }
+
+  get movies$(): Observable<MoviePayload[]> {
+    return this.facade.movies$;
   }
 
   public fetchMovies(): void {

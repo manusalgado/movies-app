@@ -15,7 +15,7 @@ export class MoviesFacade {
     private store: Store<DashboardState>
   ) { }
 
-  public users$: Observable<MoviePayload[]> = this.store.pipe(
+  public movies$: Observable<MoviePayload[]> = this.store.pipe(
     select(selectAllMovies)
   );
 
