@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
+import { Credentials } from '../../interfaces/login';
 
 @Component({
   selector: 'app-login-form',
@@ -10,7 +12,7 @@ export class LoginFormComponent implements OnInit {
 
   public form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private authService: AuthService) { }
 
   ngOnInit() {
     this.init();
@@ -18,9 +20,19 @@ export class LoginFormComponent implements OnInit {
 
   public init(): void {
     this.form = this.formBuilder.group({
-      email: ['', Validators.required],
+      username: ['', Validators.required],
       password: ['', Validators.required]
     })
+  }
+
+  public onSubmit(): void {
+    if (this.form.valid) {
+      const {username, password} = this.form.value;
+      const payload: Credentials = {
+        username, password
+      }
+      this.authService.login(payload);
+    }
   }
 
 }
