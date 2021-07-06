@@ -7,6 +7,14 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="movie$ | async as movie">
-  {{movie.name}}
+<ion-content *ngIf="movie$ | async as movie" fullscreen>
+  <ion-card>
+    <img [src]="movie.thumbnail" />
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title>{{movie.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
